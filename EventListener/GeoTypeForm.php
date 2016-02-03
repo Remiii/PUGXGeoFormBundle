@@ -48,8 +48,8 @@ class GeoTypeForm implements EventSubscriberInterface
 
             $this->geoCode->query($address);
             $location = $this->geoCode->getFirst();
-            $data['latitude'] = $location->getLatitude();
-            $data['longitude'] = $location->getLongitude();
+            $data['geoCodeY'] = $location->getLatitude();
+            $data['geoCodeX'] = $location->getLongitude();
 
             $event->setData($data);
         } catch (\Exception $e) {
