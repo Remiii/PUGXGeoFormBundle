@@ -19,7 +19,7 @@ class GeoCodeExtension extends AbstractTypeExtension
 
     public function getExtendedType()
     {
-        return 'form';
+        return FormType::class;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)
