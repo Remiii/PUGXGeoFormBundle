@@ -1,10 +1,10 @@
 parameters:
     pugx_geo_form.geo_data_adapter_class: PUGX\GeoFormBundle\Adapter\GeoDataAdapter
-    pugx_geo_form.geo_provider_class: Geocoder\Provider\GoogleMapsProvider
-    pugx_geo_form.geo_http_adapter_class: Geocoder\HttpAdapter\BuzzHttpAdapter
+    pugx_geo_form.geo_provider_class: Geocoder\Provider\GoogleMaps
+    pugx_geo_form.geo_http_adapter_class: Ivory\HttpAdapter\CurlHttpAdapter
     pugx_geo_form.http_browser_class: Buzz\Browser
     pugx_geo_form.http_client_class: Buzz\Client\Curl
-    pugx_geo_form.geocoder_class: Geocoder\Geocoder
+    pugx_geo_form.geocoder_class: Geocoder\ProviderAggregator
     pugx_geo_form.geo_code_manager_class: PUGX\GeoFormBundle\Manager\GeoCodeManager
     pugx_geo_form.geo_form_type_subscriber_class: PUGX\GeoFormBundle\EventListener\GeoTypeForm
     pugx_geo_form.geo_code_type_extension_class: PUGX\GeoFormBundle\Form\Extension\GeoCodeExtension
@@ -19,7 +19,6 @@ services:
 
     pugx_geo_form.geo_http_adapter:
         class:     %pugx_geo_form.geo_http_adapter_class%
-        arguments: ["@pugx_geo_form.http_browser"]
 
     pugx_geo_form.geo_provider:
         class:     %pugx_geo_form.geo_provider_class%

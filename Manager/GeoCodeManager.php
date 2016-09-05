@@ -3,7 +3,7 @@
 namespace PUGX\GeoFormBundle\Manager;
 
 use Geocoder\Geocoder;
-use Geocoder\Provider\ProviderInterface;
+use Geocoder\Provider\Provider;
 
 class GeoCodeManager
 {
@@ -52,7 +52,7 @@ class GeoCodeManager
             return;
         }
 
-        return $this->results[$index];
+        return $this->results[$index]->first();
     }
 
     /**
@@ -62,10 +62,10 @@ class GeoCodeManager
      */
     public function getFirst()
     {
-        return !isset($this->results[0]) ?: $this->results[0];
+        return !isset($this->results[0]) ?: $this->results[0]->first();
     }
 
-    public function registerProvider(ProviderInterface $provider)
+    public function registerProvider(Provider $provider)
     {
         $this->geoCoder->registerProvider($provider);
     }
