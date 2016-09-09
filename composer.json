@@ -24,7 +24,7 @@
         "symfony/framework-bundle": "~2.3|~3.0",
         "symfony/form": "~2.3|~3.0",
         "symfony/security-bundle": "~2.3|~3.0",
-        "willdurand/geocoder": "~2.8",
+        "willdurand/geocoder": "~3.3",
         "kriswallsmith/buzz": "~0.15"
     },
     "require-dev": {
